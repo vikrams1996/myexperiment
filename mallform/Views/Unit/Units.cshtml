@@ -1,0 +1,21 @@
+﻿@model mallform.ViewModel.UnitsFormViewModel
+@{
+    ViewBag.Title = "Units";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Units</h2>
+
+@using  (Html.BeginForm("Units", "Unit"))
+{
+
+   <label>
+       Add Size
+   </label>
+   @Html.TextBoxFor(m=>m.Size , new { @class = "form-control" ,placeholder = "In Square Feet" })
+
+    @Html.LabelFor(m=>m.Floor)
+    @Html.DropDownListFor(m=>m.Floor , new SelectList(Model.Floors , "Id" ,"Floor"),"" , new { @class = "form-control" })
+
+
+} 
